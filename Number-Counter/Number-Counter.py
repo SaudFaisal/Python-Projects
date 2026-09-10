@@ -1,10 +1,16 @@
 #First def the get_number() -> use for if the user put a wrong value instead of a number will not crash the code
+#add a quit to the code by using a var str then turn the var to a int to continue the code
 
 
 def get_number(b):
     try:
-        a = int(input(b))
-        return a
+        exitcode = input(b)
+        if exitcode == "q" or exitcode == "quit":
+            print("GoodBye!")
+            return "quit"
+        else:
+            a = int(exitcode)
+            return a
     except ValueError:
         print("That's not a number,Try again.")
         return None
@@ -22,19 +28,25 @@ def get_number(b):
 
 while True:
 
-    start = get_number("Enter a number to start from: ")
+    start = get_number("Enter a number to start from or type q , quit to quit the code: ")
     if start is None:
         continue
+    if start == "quit":
+        break
 
-    end = get_number("Enter a number to end at: ")
+    end = get_number("Enter a number to end at or type q , quit to quit the code: ")
     if end is None:
         continue
+    if end == "quit":
+            break
 
-    jump = get_number("Enter the step size: ")
+    jump = get_number("Enter the step size or type q , quit to quit the code: ")
     if jump == 0:
         jump = 1
     if jump is None:
         continue
+    if jump == "quit":
+            break
 
     if end > start :
         for i in range(start, end + 1, jump):
