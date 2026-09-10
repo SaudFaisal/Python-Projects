@@ -27,23 +27,30 @@ def get_number(text):
         return None 
             
 
-
-while True:
+def calculator():
     num1 = get_number("Enter the First number To quit type q or quit: ")
     if num1 is None:
-        continue
+        return  "error"
+    
     if num1 == "quit":
-        break
+        return "quit"
     oper = get_number("Enter which operator \n1 - Addition\n2 - Subtraction\n3 - multiplication\n4 - division\nTo quit type q or quit \nEnter your opition here: ")
+
     if oper is None:
-        continue
+        return "error"
     if oper == "quit":
-            break
+        return "quit"
+    if oper not in  [1,2,3,4]:
+        print("That's not an option,Try again.")
+        return "error"
+
+    
     num2 = get_number("Enter the Second number To quit type q or quit: ")
     if num2 is None:
-        continue
+        return "error"
+    
     if num2 == "quit":
-            break
+        return "quit"
 
     if oper == 1:
         print(num1 + num2)
@@ -56,9 +63,14 @@ while True:
             print("You cannot divide by Zero")
         else:
             print(num1 / num2)
-    else:
-        print("Thats not an opition,Try again.")
+
+
+while True:
+    result = calculator()
+    if result == "quit":
+        break
+    elif result == "error":
         continue
-    
+
 
 
