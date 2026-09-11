@@ -1,13 +1,14 @@
 
 '''
 1.create get_number for Value error and setup quit option as str first then make it int
-2.use while true so it be on a loop until the user wants to quit
-3.input num1 , num2 , oper
-4.let user chose from 1-4
-4. 1 = add , 2 = subtract , 3 = multiply , 4 = divide
-5.make sure to use if for None for the get_number and if =="quit" so he can quit the code
-6.use if statement to check whether the user choose from if = 1 the do add and so one using elif
-7.make sure no logical error like divide by zero fix it by if statement
+2.create calculator to store all the operations and any error 
+3.use while true so it be on a loop until the user wants to quit
+4.input num1 , num2 , oper
+5.let user chose from 1-4
+6. 1 = add , 2 = subtract , 3 = multiply , 4 = divide
+7.make sure to use if for None for the get_number and if =="quit" so he can quit the code
+8.use if statement to check whether the user choose from if = 1 the do add and so one using elif
+9.make sure no logical error like divide by zero fix it by if statement
 '''
 
 
