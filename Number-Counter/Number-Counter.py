@@ -41,12 +41,13 @@ while True:
             break
 
     jump = get_number("Enter the step size or type q , quit to quit the code: ")
+    if jump == 0:
+        jump = 1
     if jump is None:
         continue
     if jump == "quit":
             break
-    if jump == 0:
-        jump = 1
+
 
     if end > start :
         for i in range(start, end + 1, jump):
