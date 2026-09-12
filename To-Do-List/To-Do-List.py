@@ -8,9 +8,10 @@
 7.delete task user len(task)=0 to know if there is any task stored if no then continue from the beginning
 8.use for with 2 variable and enumerate(task): so that is shows what is inside the list with the Index of it 
 9.deltask = the number of Index wanted to delete , use len(task) > deltask so that if the user type an Index not in the list it prevent this from happening
-10.del task[deltask] this delete the task in the list remember deltast = Index 
-11.show tasks we use if len(task) == 0 if no task print no task , we use for and enumerate(task) to print the Index and the task in the list
-12.Quit we print GoodBye! and break the loop
+10.use and deltask >= 0,so that the user can't put a negative number that will work correctly and delete from the last ,but the user didn't want that.
+11.del task[deltask] this delete the task in the list remember deltast = Index 
+12.show tasks we use if len(task) == 0 if no task print no task , we use for and enumerate(task) to print the Index and the task in the list
+13.Quit we print GoodBye! and break the loop
 '''
 
 def get_number(text):
@@ -40,7 +41,7 @@ while True:
         deltask = get_number("Enter the number of the Index you want to delete: ")
         if  deltask is None:
              continue
-        if len(task) > deltask and deltask != -1:
+        if len(task) > deltask and deltask >= 0:
              del task[deltask]
         else:
             print("There is no task with that Index.")
