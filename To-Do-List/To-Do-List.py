@@ -40,15 +40,15 @@ while True:
         deltask = get_number("Enter the number of the Index you want to delete: ")
         if  deltask is None:
              continue
-        if len(task) > deltask:
+        if len(task) > deltask and deltask != -1:
              del task[deltask]
         else:
             print("There is no task with that Index.")
         continue
     elif choice == 3:
         if len(task) == 0:
-
-                    print("There is no tasks.")
+                print("There is no tasks.")
+                continue
         for Index, Tasks in enumerate(task):
             print(f"Index: {Index}, Tasks: {Tasks}")
         continue
