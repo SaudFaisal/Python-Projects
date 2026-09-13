@@ -11,6 +11,7 @@
 10.if user choose 6 = quit print(Goodbye!) and use breack function to quit .
 """
 
+import json
 
 def get_number(text):
     try:
@@ -20,7 +21,12 @@ def get_number(text):
         print("That's not a number,Try again.")
         return None
 
-contact = {}
+
+
+json_path = "C:\\Users\\j-_p\\Documents\\Python-Projects\\Contack book\\contact.json"
+contact_json = open(json_path, "r")
+contact = json.load(contact_json)
+contact_json.close()
 
 while True:
     choice = get_number("Select which option you want.\n1 - Add contact\n2 - Search Contact\n3 - Update Contact\n4 - Delete Contact\n5 - Show all Contacts\n6 - Quit\nEnter the number here: ")
@@ -93,3 +99,6 @@ while True:
     else:
         print("That's not an option,Try again.")
 
+contact_json = open(json_path, "w")
+json.dump(contact, contact_json)
+contact_json.close()
