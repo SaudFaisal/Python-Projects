@@ -42,7 +42,6 @@ if os.path.exists(json_path) and os.path.getsize(json_path) > 0:
 else:
     contact_json = open(json_path, "w")
     contact_json.close()
-    
 
 while True:
     choice = get_number("Select which option you want.\n1 - Add contact\n2 - Search Contact\n3 - Update Contact\n4 - Delete Contact\n5 - Show all Contacts\n6 - Quit\nEnter the number here: ")
