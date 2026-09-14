@@ -1,7 +1,7 @@
 """
 1.import json to save the contact in a json file.
 2.import os to add a json file if there isn't any or to check the path.
-3.add get_number to avoid ValueError.
+3.add get_number to avoid ValueError,then we created finddir to find the direction of the file,we used json_path = os.path.join(finddir,"contact_json") ==> to let the var enter the dir and create a json file.
 4.we assign json_path to the contact.json we use if with os exith to check whether the file exits or no , and we use os getsize > 0 to check if the file exits and it's not empty.
 5.if the condition was True,We usa Try function to avoid if there is any error with the file it's self then, we assign the contact_json = open(json_path, "r") , then we load the info to contact then we close by contact_json.close().
 6.if the condition was False,we use contact_json = open(json_path, "w") to create a file called contact.json then close by contact_json.close().
@@ -30,7 +30,10 @@ def get_number(text):
 
 contact = {}
 
-json_path = "C:\\Users\\j-_p\\Documents\\Python-Projects\\Contack book\\contact.json"
+finddir = os.path.dirname(os.path.abspath(__file__))
+
+json_path = os.path.join(finddir, "Contact.json")
+
 if os.path.exists(json_path) and os.path.getsize(json_path) > 0:
     try:
         contact_json = open(json_path, "r")
@@ -92,7 +95,7 @@ while True:
             print("That's not an option")
     elif choice == 4:
         if len(contact) == 0:
-            print("There is no contact to update.")
+            print("There is no contact to delete.")
             continue
         for keys , info in contact.items():
             print(f"Name: {keys}, phone: {info['phone']}, email: {info['email']}")
